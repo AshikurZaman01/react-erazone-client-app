@@ -28,14 +28,16 @@ function Navbar() {
   };
 
 
-  const user = true;
+  const user = false;
 
   return (
     <nav className="p-5 bg-white shadow md:flex md:items-center md:justify-between">
       <div className="flex justify-between items-center ">
-        <span className="text-2xl  cursor-pointer">
-          <img className="h-10 inline" src={logo} alt="Logo" />
-        </span>
+        <NavLink to={'/'}>
+            <span className="text-2xl  cursor-pointer">
+              <img className="h-10 inline" src={logo} alt="Logo" />
+            </span>
+        </NavLink>
 
         <span className="text-3xl cursor-pointer mx-2 md:hidden block" onClick={toggleMenu}>
           {isMenuOpen ? <AiOutlineCloseCircle /> : <HiMenuAlt2 />}
