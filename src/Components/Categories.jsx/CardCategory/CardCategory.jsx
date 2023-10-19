@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const CardCategory = ({category}) => {
 
-    console.log(category)
 
     const {category_id , category_name , category_image , short_description} = category || {}
 
@@ -19,7 +18,7 @@ const CardCategory = ({category}) => {
                     <p>{short_description}</p>
                     <div className="card-actions justify-end">
                    
-                    <Link to={'/category_name'}>
+                    <Link to={`/brand/${category_name}`}>
                     <div>
                         <button className="btn btn-primary ">Go <span className='text-[20px] font-bold px-2 '><AiOutlineArrowRight></AiOutlineArrowRight></span></button>
                     </div>

@@ -13,6 +13,7 @@ import Blog from './Components/Pages/Blog/Blog';
 import Contact from './Components/Pages/Contact/Contact';
 import Categories from './Components/Categories.jsx/Categories';
 import AddProduct from './Components/Pages/AddProduct/AddProduct';
+import Brand from './Components/Pages/Brand/Brand';
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,11 @@ const router = createBrowserRouter([
       {
         path : "/categories",
         element : <Categories></Categories>,
-        loader : ()=>fetch("/category.json")
+      },
+      {
+        path : "/brand/:category_name",
+        element : <Brand></Brand>,
+        loader : ()=> fetch('http://localhost:3000/erazone')
       }
     ]
   },

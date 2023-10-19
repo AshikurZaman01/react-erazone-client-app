@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 
 const AddProduct = () => {
 
@@ -11,8 +12,51 @@ const AddProduct = () => {
         const productDescription = form.productDescription.value;
         const productImage = form.productImage.value;
         const category = form.category.value;
+        const rating =  form.rating.value;
 
-        console.log(category);
+        const products = {
+            productName,
+            productPrice,
+            productDescription,
+            productImage,
+            category,
+            rating
+        }
+        console.log(products)
+
+        fetch('http://localhost:3000/erazone' , {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(products)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId)
+                {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-right',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                          toast.addEventListener('mouseenter', Swal.stopTimer)
+                          toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                      })
+                      
+                      Toast.fire({
+                        icon: 'success',
+                        title: 'Product Added Successfully'
+                      })
+                }
+                form.reset();
+            })
+
+
     }
 
     return (
@@ -73,7 +117,7 @@ const AddProduct = () => {
                                         <label className='label'>
                                             <span className='label-text'>Rating</span>
                                         </label>
-                                        <select className='select select-bordered'>
+                                        <select name='rating' className='select select-bordered'>
                                             <option value="" disabled defaultValue>
                                                 Pick a Rating
                                             </option>
