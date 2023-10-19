@@ -12,6 +12,7 @@ import Products from './Components/Pages/Products/Products';
 import Blog from './Components/Pages/Blog/Blog';
 import Contact from './Components/Pages/Contact/Contact';
 import Categories from './Components/Categories.jsx/Categories';
+import AddProduct from './Components/Pages/AddProduct/AddProduct';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path : "/contact",
         element : <Contact></Contact>
+      },
+      {
+        path : "/addproduct",
+        element : <AddProduct></AddProduct>
       },
       {
         path : "/categories",

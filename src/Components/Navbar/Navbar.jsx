@@ -106,6 +106,18 @@ function Navbar() {
             CONTACT
           </NavLink>
         </li>
+
+        <li className="mx-4 my-6 md:my-0">
+          <NavLink to={'/addproduct'}  className={({ isActive, isPending }) =>
+                        isActive
+                        ? "text-xl text-cyan-500 underline duration-500"
+                        : isPending
+                        ? "pending"
+                        : ""
+                    }>
+            ADD PRODUCT
+          </NavLink>
+        </li>
       </ul>
 
         <span>
