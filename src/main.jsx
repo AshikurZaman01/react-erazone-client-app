@@ -11,6 +11,7 @@ import About from './Components/Pages/About/About';
 import Products from './Components/Pages/Products/Products';
 import Blog from './Components/Pages/Blog/Blog';
 import Contact from './Components/Pages/Contact/Contact';
+import Categories from './Components/Categories.jsx/Categories';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
       {
         path : "/contact",
         element : <Contact></Contact>
+      },
+      {
+        path : "/categories",
+        element : <Categories></Categories>,
+        loader : ()=>fetch("/category.json")
       }
     ]
   },

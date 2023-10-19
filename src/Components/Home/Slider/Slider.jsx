@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { GrCaretNext , GrCaretPrevious, GrNext, GrPrevious } from 'react-icons/gr';
 
 const Slider = () => {
     const images = [
@@ -6,7 +7,7 @@ const Slider = () => {
         
         'https://img.freepik.com/free-photo/futuristic-galaxy-mobile-phone-connects-with-wireless-technology-generated-by-ai_188544-29655.jpg',
 
-        'https://img.freepik.com/free-photo/portable-information-device-with-damaged-touch-screen-generative-ai_188544-46211.jpg    ',
+        'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D',
     ];
 
     const text1 = <div>
@@ -27,7 +28,7 @@ const text2 = <div>
 
 const text3 = <div>
 <div>
-    <h1 className='text-6xl text-center'>Asus Zenphone </h1><br />
+    <h1 className='text-6xl text-center'>Macbook Pro 16</h1><br />
     <h4 className='text-3xl text-yellow-300 text-center  '>New Arrival</h4>
     <button className='text-2xl text-center block mx-auto mt-10 bg-pink-400 px-10 rounded py-2 opacity-90'>Buy Now</button>
 </div>
@@ -76,7 +77,7 @@ const text3 = <div>
                     onClick={prevSlide}
                     className="text-white bg-gray-800 p-2 rounded-full hover:bg-gray-600 focus:outline-none"
                 >
-                    Previous
+                    <GrPrevious></GrPrevious>
                 </button>
             </div>
             <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
@@ -84,7 +85,7 @@ const text3 = <div>
                     onClick={nextSlide}
                     className="text-white bg-gray-800 p-2 rounded-full hover:bg-gray-600 focus:outline-none"
                 >
-                    Next
+                    <GrNext></GrNext>
                 </button>
             </div>
         </div>
