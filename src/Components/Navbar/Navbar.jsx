@@ -106,45 +106,41 @@ function Navbar() {
             CONTACT
           </NavLink>
         </li>
-
-
-        
       </ul>
 
-      <span>
-    {user ? (
-    <div className="relative">
-      <button
-        className=" text-white duration-500 px-6 py-0 mx-4 "
-        onClick={toggleUserDropdown}
-      >
-        <div>
-          <div className="avatar">
-            <div className="w-14 mask mask-hexagon">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
+        <span>
+        {user ? (
+        <div className="relative">
+          <button
+            className=" text-white duration-500 px-6 py-0 mx-4 "
+            onClick={toggleUserDropdown}
+          >
+            <div>
+              <div className="avatar">
+                <div className="w-14 mask mask-hexagon">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
+                </div>
+              </div>
             </div>
-          </div>
+          </button>
+          {isUserDropdownOpen && (
+            <div className="absolute  right-0 mt-5 w-48 bg-white border rounded shadow-lg">
+              <div className="px-4 py-2">
+                <p>Name</p>
+                <p>email</p>
+              </div>
+              <div className="px-4 py-3">
+                <button className='text-center block mx-auto text-white rounded bg-orange-500 w-full'>LOGOUT</button>
+              </div>
+            </div>
+          )}
         </div>
-      </button>
-      {isUserDropdownOpen && (
-        <div className="absolute right-0 mt-5 w-48 bg-white border rounded shadow-lg">
-          <div className="px-4 py-2">
-            <p>Name</p>
-            <p>email</p>
-          </div>
-          <div className="px-4 py-3">
-            <button className='text-center block mx-auto text-white rounded bg-orange-500 w-full'>LOGOUT</button>
-          </div>
-        </div>
+      ) : (
+        <button className="bg-cyan-400 font-bold text-white duration-500 px-6 py-2 mx-4 hover-bg-cyan-500 rounded">
+          LOGIN
+        </button>
       )}
-    </div>
-  ) : (
-    <button className="bg-cyan-400 font-bold text-white duration-500 px-6 py-2 mx-4 hover-bg-cyan-500 rounded">
-      LOGIN
-    </button>
-  )}
-</span>
-
+    </span>
     </nav>
   );
 }
