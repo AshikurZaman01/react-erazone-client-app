@@ -52,7 +52,9 @@ const router = createBrowserRouter([
         path : "/brand/:category_name",
         element : <Brand></Brand>,
         loader : ()=> fetch('http://localhost:3000/erazone')
-      }
+      },
+      
+      
     ]
   },
 ]);

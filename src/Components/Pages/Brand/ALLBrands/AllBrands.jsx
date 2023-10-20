@@ -1,13 +1,50 @@
 import React from 'react';
 import Rating from 'react-rating';
-import { Link } from 'react-router-dom';
+import { RiDeleteBack2Line } from 'react-icons/ri';
+import { GrUpdate , GrView } from 'react-icons/gr';
+import Swal from 'sweetalert2';
 
 const AllBrands = ({item}) => {
 
-    
-
     const {_id , productName , productImage , productDescription , rating , productPrice} = item || {}
 
+    const handleDelete = (id) => {
+        
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              
+              fetch(`http://localhost:3000/erazone/${id}` , {
+                method: 'DELETE'
+              })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if(data.deletedCount > 0)
+                    {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your Product has been deleted.',
+                            'success'
+                          )
+                        setTimeout(()=>
+                        {
+                            window.location.reload()
+                        },1000)
+                    }
+                })
+            }
+          })
+
+    }
+    
     return (
         <div>
             <div >
@@ -31,10 +68,17 @@ const AllBrands = ({item}) => {
 
                 <div className="flex items-center justify-between">
                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${productPrice}</span>
-                <Link to={'/brandDetails'} className="text-white bg-blue-700 hover-bg-blue-800 focus-ring-4 focus-outline-none focus-ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark-bg-blue-600 dark-hover-bg-blue-700 dark-focus-ring-blue-800">View Details</Link>
+
+                
+                <div className="btn-group btn-group-vertical">
+                    <button onClick={()=>handleDelete(_id)} className="btn text-xl text-red-500"><RiDeleteBack2Line></RiDeleteBack2Line> </button>
+                    <button className="btn text-xl text-green-500"><GrUpdate></GrUpdate></button>
+                    <button className="btn text-xl"><GrView></GrView></button>
+                </div>
+
                 </div>
             </div>
-    </div>
+            </div>
             </div>
         </div>
     );
