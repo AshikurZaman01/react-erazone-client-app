@@ -21,8 +21,8 @@ const LatestProduct = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToShow: 3,
+        slidesToScroll: 3
       };
 
     return (
@@ -42,9 +42,9 @@ const LatestProduct = () => {
                 <Slider {...settings}>
 
                     {
-                       products && products.slice(0,5).map(product =>(
-                            <div className='bg-purple-200 w-[400px] h-[340px] text-black rounded-xl shadow-2xl shadow-cyan-700 border border-spacing-1'>
-                                <div className='h-56 rounded-t-xl flex justify-center items-center'>
+                       products && products.slice(0,10).map(product =>(
+                            <div className='bg-purple-200 w-[400px]  h-[340px] text-black rounded-xl shadow-2xl shadow-cyan-700 border border-spacing-1'>
+                                <div className='h-56 rounded-t-xl flex justify-center gap-5 items-center'>
                                     <img className='h-48 w-50 rounded' src={product.productImage} alt="" />
                                 </div>
                                 <div className='flex flex-col justify-center items-center '>
