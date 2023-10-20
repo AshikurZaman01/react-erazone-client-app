@@ -20,15 +20,16 @@ const ViewProduct = () => {
                 
                 <div className='flex-1 '>
                     <div className='space-y-4'>
-                        <h1>{details.productName}</h1>
-                        <h2>Brand : {details.category}</h2>
-                        <h3>Rating : <span className='px-3 bg-cyan-400 text-orange-500  rounded-lg'>{details.rating}</span></h3>
-                        <h3>Price : <span className='text-orange-500 font-bold'>{details.productPrice}</span></h3>
+                        <h1 className='text-4xl font-semibold'>{details.productName}</h1>
+                        <h2 className='text-3xl'>Brand : {details.category}</h2>
+                        <h3 className='text-3xl'>Rating : <span className='px-3 bg-cyan-400 text-orange-500  rounded-lg'>{details.rating}</span></h3>
+                        <h3 className='text-2xl'>Price : <span className='text-orange-500 font-bold'>{details.productPrice}</span></h3>
                     </div>
                 </div>
             </div>
 
             <div className='w-[800px] mx-auto bg-purple-200 p-10'>
+                <h1 className='underline text-4xl font-bold text-cyan-600 mb-10'>View Specifications</h1>
                 <p className='text-justify'>{details.productDescription}</p>
             </div>
         </div>

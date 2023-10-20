@@ -17,6 +17,7 @@ import Brand from './Components/Pages/Brand/Brand';
 import UpdateProduct from './Components/Pages/AddProduct/UpdateProduct/UpdateProduct';
 import ProductDetails from './Components/Pages/Products/ProductCard/ProductDetails/ProductDetails';
 import ViewProduct from './Components/Pages/AddProduct/ViewProduct/ViewProduct';
+import LatestProduct from './Components/Pages/LatestProduct/LatestProduct';
 
 const router = createBrowserRouter([
   {
@@ -75,7 +76,11 @@ const router = createBrowserRouter([
         element : <Brand></Brand>,
         loader : ()=> fetch('http://localhost:3000/erazone')
       },
-     
+     {
+      path : "/latestProduct",
+      element : <LatestProduct></LatestProduct>,
+      loader : ()=> fetch('http://localhost:3000/erazone')
+     }
       
       
     ]
