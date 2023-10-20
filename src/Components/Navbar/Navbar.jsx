@@ -117,16 +117,6 @@ function Navbar() {
                     }>
             ADD PRODUCT
           </NavLink>
-
-          <NavLink to={'/updateProduct'}  className={({ isActive, isPending }) =>
-                        isActive
-                        ? "text-xl text-cyan-500 underline duration-500"
-                        : isPending
-                        ? "pending"
-                        : ""
-                    }>
-            Update PRODUCT
-          </NavLink>
         </li>
       </ul>
 

@@ -10,6 +10,9 @@ const ProductCard = ({product}) => {
 
     return (
         <div>
+
+           
+
             <div className=''>
             <div className="w-full mx-auto max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className='h-[400px] w-full'>
