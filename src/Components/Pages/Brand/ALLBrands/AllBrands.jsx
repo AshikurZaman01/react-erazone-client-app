@@ -74,11 +74,14 @@ const AllBrands = ({item}) => {
                 <div className="btn-group btn-group-vertical">
                     <button onClick={()=>handleDelete(_id)} className="btn text-xl text-red-500"><RiDeleteBack2Line></RiDeleteBack2Line> </button>
                     
-                    <Link to={`updateProduct/${item._id}`}>
+                    <Link to={`/updateProduct/${item._id}`}>
                     <button className="btn text-xl text-green-500"><GrUpdate></GrUpdate></button>
                     </Link>
 
+                    <Link to={`/viewProduct/${item._id}`}>
                     <button className="btn text-xl"><GrView></GrView></button>
+                    </Link>
+                    
                 </div>
 
                 </div>
