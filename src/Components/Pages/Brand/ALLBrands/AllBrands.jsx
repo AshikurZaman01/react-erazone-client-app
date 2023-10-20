@@ -3,6 +3,7 @@ import Rating from 'react-rating';
 import { RiDeleteBack2Line } from 'react-icons/ri';
 import { GrUpdate , GrView } from 'react-icons/gr';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const AllBrands = ({item}) => {
 
@@ -72,7 +73,11 @@ const AllBrands = ({item}) => {
                 
                 <div className="btn-group btn-group-vertical">
                     <button onClick={()=>handleDelete(_id)} className="btn text-xl text-red-500"><RiDeleteBack2Line></RiDeleteBack2Line> </button>
+                    
+                    <Link to={`updateProduct/${item._id}`}>
                     <button className="btn text-xl text-green-500"><GrUpdate></GrUpdate></button>
+                    </Link>
+
                     <button className="btn text-xl"><GrView></GrView></button>
                 </div>
 
