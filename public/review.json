@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "image": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww",
+      "review": "I purchased the latest iPhone, and I couldn't be happier with it. The phone's performance is outstanding.",
+      "date": "2023-05-15",
+      "experience": "5 stars"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww",
+      "review": "Erazone offers an excellent selection of smartphones. The staff was very helpful in guiding me to the right choice.",
+      "date": "2023-04-20",
+      "experience": "4 stars"
+    },
+    {
+      "id": 3,
+      "name": "Robert Johnson",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww",
+      "review": "The delivery was fast, and the phone arrived in perfect condition. Great service!",
+      "date": "2023-03-10",
+      "experience": "5 stars"
+    },
+    {
+      "id": 4,
+      "name": "Emily Brown",
+      "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGVyc29ufGVufDB8fDB8fHww",
+      "review": "I had a minor issue with my order, but Erazone's customer support resolved it quickly and professionally.",
+      "date": "2023-02-05",
+      "experience": "4 stars"
+    },
+    {
+      "id": 5,
+      "name": "David Wilson",
+      "image": "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGVyc29ufGVufDB8fDB8fHww",
+      "review": "The prices at Erazone are competitive, and I found a great deal on a high-end smartphone.",
+      "date": "2023-01-12",
+      "experience": "5 stars"
+    },
+    {
+      "id": 6,
+      "name": "Linda Anderson",
+      "image": "https://images.unsplash.com/photo-1491349174775-aaafddd81942?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "review": "I ordered a phone case, and it arrived as described. Good quality product.",
+      "date": "2022-12-28",
+      "experience": "4 stars"
+    },
+    {
+      "id": 7,
+      "name": "Michael Lee",
+      "image": "https://plus.unsplash.com/premium_photo-1674777843203-da3ebb9fbca0?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "review": "Erazone's website is easy to navigate, and the checkout process is smooth. I'll shop here again.",
+      "date": "2022-11-20",
+      "experience": "5 stars"
+    },
+    {
+      "id": 8,
+      "name": "Sarah Clark",
+      "image": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "review": "I've been a loyal Erazone customer for years. They consistently provide top-notch products and service.",
+      "date": "2022-10-15",
+      "experience": "5 stars"
+    },
+    {
+      "id": 9,
+      "name": "Daniel White",
+      "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "review": "I bought a refurbished phone, and it looks and works like new. Great value for money.",
+      "date": "2022-09-05",
+      "experience": "4 stars"
+    },
+    {
+      "id": 10,
+      "name": "Karen Taylor",
+      "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D",
+      "review": "The Erazone store in my city has a welcoming atmosphere, and the staff is knowledgeable and friendly.",
+      "date": "2022-08-10",
+      "experience": "5 stars"
+    }
+  ]
+  
