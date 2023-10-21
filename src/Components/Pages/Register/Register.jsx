@@ -103,9 +103,9 @@ const Register = () => {
                         <div>
                             <p>Already Have an Account? <span className='text-blue-500'><Link to={'/login'}> Login Here</Link></span></p>
                         </div>
-                        <SignInWith></SignInWith>
-
                     </form>
+                    <SignInWith></SignInWith>
+
                 </div>
             </div>
             

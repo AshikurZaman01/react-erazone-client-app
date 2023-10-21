@@ -78,9 +78,10 @@ const Login = () => {
                         <div>
                             <p>New User <span className='text-blue-500'><Link to={'/register'}> Register Here</Link></span></p>
                         </div>
-                        <SignInWith></SignInWith>
+                        
 
                     </form>
+                    <SignInWith></SignInWith>
                 </div>
             </div>
             

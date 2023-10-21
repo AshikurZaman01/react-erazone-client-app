@@ -21,11 +21,14 @@ import LatestProduct from './Components/Pages/LatestProduct/LatestProduct';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
 import AuthProvider from './Components/Auth/AuthProvider/AuthProvider';
+import ErrorPage from './Components/Pages/ErrorPage/ErrorPage';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roots></Roots>,
+    errorElement : <ErrorPage></ErrorPage>,
     children : [
       {
         path: "/",
@@ -38,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/productDetails/:id",
-        element : <ProductDetails></ProductDetails>,
+        element : <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
         loader : ({params}) => fetch(`http://localhost:3000/erazone/${params.id}`)
         
       },
@@ -46,27 +49,24 @@ const router = createBrowserRouter([
         path: "/about",
         element : <About></About>
       },
-      {
-        path : "/blog",
-        element : <Blog></Blog>
-      },
+    
       {
         path : "/contact",
         element : <Contact></Contact>
       },
       {
         path : "/addproduct",
-        element : <AddProduct></AddProduct>
+        element : <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
 
       {
         path : "/updateProduct/:id",
-        element : <UpdateProduct></UpdateProduct>,
+        element : <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
         loader : ({params})=> fetch(`http://localhost:3000/erazone/${params.id}`)
       },
       {
         path : "/viewProduct/:id",
-        element : <ViewProduct></ViewProduct>,
+        element : <PrivateRoute><ViewProduct></ViewProduct></PrivateRoute>,
         loader : ({params}) => fetch(`http://localhost:3000/erazone/${params.id}`)
 
       },
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/brand/:category_name",
-        element : <Brand></Brand>,
+        element : <PrivateRoute><Brand></Brand></PrivateRoute>,
         loader : ()=> fetch('http://localhost:3000/erazone')
       },
      {
