@@ -32,10 +32,20 @@ const AuthProvider = ({children}) => {
    useEffect(()=>
    {
         const unSubcribe = onAuthStateChanged(auth ,(user)=>{
+            if(user)
+            {
             console.log('User Logged in');
             setUser(user);
             setLoading(false)
+            }
+            else
+            {
+                console.log('User Logged out');
+                setUser(null);
+                setLoading(false)
+            }
         })
+        
         return ()=>{
             unSubcribe();
         } 
@@ -47,7 +57,8 @@ const AuthProvider = ({children}) => {
         createUser,
         logout,
         signInUser,
-        loading}
+        loading
+    }
 
     return (
         <AuthContext.Provider value={authentcation}>

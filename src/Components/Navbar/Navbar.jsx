@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import logo from '../../Images/logo.png';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../Auth/AuthProvider/AuthProvider';
 
 function Navbar() {
+
+  const {user , logout} = useContext(AuthContext)
+
+  const handleLogout = () => {
+    logout();
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
@@ -28,7 +36,6 @@ function Navbar() {
   };
 
 
-  const user = false;
 
   return (
     <nav className="p-5 bg-white shadow md:flex md:items-center md:justify-between">
@@ -120,19 +127,19 @@ function Navbar() {
             <div>
               <div className="avatar">
                 <div className="w-14 mask mask-hexagon">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D" />
+                  <img src={user.photoURL} />
                 </div>
               </div>
             </div>
           </button>
           {isUserDropdownOpen && (
-            <div className="absolute  right-0 mt-5 w-48 bg-white border rounded shadow-lg">
+            <div className="absolute  right-0 mt-2 z-10 w-48 bg-white border rounded shadow-lg">
               <div className="px-4 py-2">
-                <p>Name</p>
-                <p>email</p>
+                <p>{user.displayName}</p>
+                <p>{user.email}</p>
               </div>
               <div className="px-4 py-3">
-                <button className='text-center block mx-auto text-white rounded bg-orange-500 w-full'>LOGOUT</button>
+                <button onClick={handleLogout} className='text-center block mx-auto text-white rounded bg-orange-500 w-full'>LOGOUT</button>
               </div>
             </div>
           )}

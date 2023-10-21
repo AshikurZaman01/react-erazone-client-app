@@ -1,8 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SignInWith from '../SignInWith/SignInWith';
+import  { AuthContext } from '../../Auth/AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext);
+
+    const location = useLocation()
+    const navigate = useNavigate()
+
 
     const handleRegisterForm = (e)=>
     {
@@ -16,6 +25,32 @@ const Register = () => {
         const password = form.password.value;
 
         console.log( name , photo , email, password);
+
+        createUser(email , password)
+        .then(res =>{
+            console.log(res.user);
+            updateProfile(res.user,
+                {
+                    displayName: name,
+                    photoURL: photo
+                })
+                .then(()=> console.log('Profile Update'))
+                .catch(err => console.log(err));
+
+                Swal.fire(
+                    'Registration Successful',
+                    'success'
+                  )
+            navigate(location?.state? location.state : '/');
+        })
+        .catch(err => {
+            Swal.fire(
+                'Registration Failed',
+                'error'
+              )
+            console.log(err);
+        })
+
     }
 
     return (
