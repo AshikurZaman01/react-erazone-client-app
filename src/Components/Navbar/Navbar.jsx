@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { HiMenuAlt2 } from 'react-icons/hi';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import logo from '../../Images/logo.png';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -138,9 +138,11 @@ function Navbar() {
           )}
         </div>
       ) : (
+        <Link to={'/login'}>
         <button className="bg-cyan-400 font-bold text-white duration-500 px-6 py-2 mx-4 hover-bg-cyan-500 rounded">
           LOGIN
         </button>
+        </Link>
       )}
     </span>
     </nav>

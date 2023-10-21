@@ -18,6 +18,8 @@ import UpdateProduct from './Components/Pages/AddProduct/UpdateProduct/UpdatePro
 import ProductDetails from './Components/Pages/Products/ProductCard/ProductDetails/ProductDetails';
 import ViewProduct from './Components/Pages/AddProduct/ViewProduct/ViewProduct';
 import LatestProduct from './Components/Pages/LatestProduct/LatestProduct';
+import Login from './Components/Pages/Login/Login';
+import Register from './Components/Pages/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +82,14 @@ const router = createBrowserRouter([
       path : "/latestProduct",
       element : <LatestProduct></LatestProduct>,
       loader : ()=> fetch('http://localhost:3000/erazone')
+     },
+     {
+      path : "/login",
+      element : <Login></Login>
+     },
+     {
+      path : "/register",
+      element : <Register></Register>
      }
       
       
