@@ -6,52 +6,51 @@ import { updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    const {createUser} = useContext(AuthContext);
-
-    const location = useLocation()
-    const navigate = useNavigate()
-
-
-    const handleRegisterForm = (e)=>
-    {
+    const handleRegisterForm = (e) => {
         e.preventDefault();
 
         const form = e.target;
-
         const name = form.name.value;
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log( name , photo , email, password);
-
-        createUser(email , password)
-        .then(res =>{
-            console.log(res.user);
-            updateProfile(res.user,
-                {
-                    displayName: name,
-                    photoURL: photo
+        if (password.length < 6) {
+            Swal.fire('Password must be at least 6 characters long');
+        } else if (!/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+            Swal.fire('Password must contain at least one letter and one number');
+        } else if (!/[@#$%^&+=]/.test(password)) {
+            Swal.fire('Password must contain at least one special character (@#$%^&+=)');
+        } else if (email === '' || password === '' || name === '') {
+            Swal.fire('Please fill in all the fields');
+        } else {
+            createUser(email, password)
+                .then((res) => {
+                    console.log(res.user);
+                    updateProfile(res.user, {
+                        displayName: name,
+                        photoURL: photo,
+                    })
+                        .then(() => {
+                            console.log('Profile Update');
+                            Swal.fire('Registration Successful', 'success');
+                            navigate(location?.state ? location.state : '/');
+                        })
+                        .catch((err) => {
+                            Swal.fire('Profile Update Failed', 'error');
+                            console.log(err);
+                        });
                 })
-                .then(()=> console.log('Profile Update'))
-                .catch(err => console.log(err));
-
-                Swal.fire(
-                    'Registration Successful',
-                    'success'
-                  )
-            navigate(location?.state? location.state : '/');
-        })
-        .catch(err => {
-            Swal.fire(
-                'Registration Failed',
-                'error'
-              )
-            console.log(err);
-        })
-
-    }
+                .catch((err) => {
+                    Swal.fire('Registration Failed', 'error');
+                    console.log(err);
+                });
+        }
+    };
 
     return (
         <div>

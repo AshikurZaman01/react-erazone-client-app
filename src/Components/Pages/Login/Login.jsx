@@ -21,6 +21,7 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email, password);
+        
 
         signInUser(email, password)
         .then(res =>{
@@ -33,7 +34,7 @@ const Login = () => {
         })
         .catch(err =>{
             Swal.fire(
-                'Login Error',
+                'Login Failed',
                 'error'
               )
             console.log(err);
