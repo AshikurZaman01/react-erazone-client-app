@@ -83,17 +83,7 @@ function Navbar() {
           </NavLink>
         </li>
 
-        <li className="mx-4 my-6 md:my-0">
-          <NavLink to={'/blog'}  className={({ isActive, isPending }) =>
-                        isActive
-                        ? "text-xl text-cyan-500 underline duration-500"
-                        : isPending
-                        ? "pending"
-                        : ""
-                    }>
-            BLOG
-          </NavLink>
-        </li>
+       
 
         <li className="mx-4 my-6 md:my-0">
           <NavLink to={'/contact'}  className={({ isActive, isPending }) =>
