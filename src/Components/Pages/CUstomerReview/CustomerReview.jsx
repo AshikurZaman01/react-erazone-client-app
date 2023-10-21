@@ -28,7 +28,7 @@ const CustomerReview = () => {
 
     return (
         <div>
-            <div className='flex items-center gap-2 text-3xl text-orange-500'>
+            <div className='flex  items-center gap-2 text-3xl text-orange-500'>
                 <MdLocalOffer />
                 <h3>Review</h3>
             </div>
@@ -36,30 +36,31 @@ const CustomerReview = () => {
                 <h1 className='text-5xl py-6'>Customer Review</h1>
             </div>
 
-            <div className='w-[400p] mx-auto'>
-                <div className='mt-20 mb-20'>
-                    <Slider {...settings}>
-                        {reviews.slice(0, 10).map((review, index) => (
-                            <div key={index} className='w-[400px]   text-black rounded-xl shadow-2xl  border border-spacing-1'>
-                                <div className='h-56 rounded-t-xl flex justify-center gap-5 items-center'>
-                                    <img className='h-48 w-50 rounded' src={review.image} alt="" />
+            <div className='w-full mx-auto'>
+            <div className='mt-10 mb-10'>
+                <Slider {...settings}>
+                    {reviews.slice(0, 10).map((review, index) => (
+                        <div key={index} className='w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 text-black rounded-xl shadow-2xl p-4 mb-4'>
+                            <div className='h-64 rounded-t-xl flex justify-center items-center'>
+                                <img className='h-48 w-48 rounded' src={review.image} alt={review.name} />
+                            </div>
+                            <div className='flex flex-col justify-center items-center'>
+                                <div className='h-10'>
+                                    <h2>{review.name}</h2>
                                 </div>
-                                <div className='flex flex-col justify-center items-center '>
-                                    <div className='h-5'>
-                                        <h2>{review.name}</h2>
-                                    </div>
-                                    <div className='my-3 h-[80px] '>
-                                        <h3 className='px-2'> {review.review}</h3>
-                                    </div>
-                                    <div>
-                                        <button className='bg-purple-400 px-5 rounded '>{review.date}</button>
-                                    </div>
+                                <div className='my-3 h-[80px] overflow-hidden'>
+                                    <h3 className='px-2 overflow-ellipsis overflow-hidden'>{review.review}</h3>
+                                </div>
+                                <div>
+                                    <button className='bg-purple-400 px-4 py-2 rounded'>{review.date}</button>
                                 </div>
                             </div>
-                        ))}
-                    </Slider>
-                </div>
+                        </div>
+                    ))}
+                </Slider>
             </div>
+            </div>
+
         </div>
     );
 };
